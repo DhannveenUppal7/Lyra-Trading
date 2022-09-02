@@ -7,14 +7,11 @@ contract LyraTrading is LyraAdapter {
   // Creating a Contract for Options Trading through Lyra.Finance
   constructor() LyraAdapter() {}
   uint[] public openPositionIds;
-  // OptionPosition public convertedPositions;
 
   function initAdapter(address _lyraRegistry, address _optionMarket, address _curveSwap, address _feeCounter) external onlyOwner {
     setLyraAddresses(_lyraRegistry, _optionMarket, _curveSwap, _feeCounter);
   }
-  // function getConvertedPositions() public {
-  //   convertedPositions = _getPositions(openPositionIds);
-  // }
+  
 
   // Buying Calls
   function buyCall(uint strikeId, uint amount) public returns (uint totalCost, uint callPositionId) {
@@ -68,7 +65,6 @@ contract LyraTrading is LyraAdapter {
       rewardRecipient: address(0)
     });
     
-    // open long call
     TradeResult memory putTradeResult = _openPosition(inputParams);
     openPositionIds.push(putTradeResult.positionId);
     return (putTradeResult.totalCost,putTradeResult.positionId);
