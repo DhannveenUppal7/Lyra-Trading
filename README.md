@@ -8,3 +8,5 @@ Currently the Project supports Optimism Goerli Testnet Network and the adapter h
 Contract Address - 0xd0C2aaD47DDc345B281354D862fB31244d6b1119
 
 Scan URL - https://blockscout.com/optimism/goerli/address/0xd0C2aaD47DDc345B281354D862fB31244d6b1119
+
+The Init Adapter Function initalizes the market and the trading and can only be called by the owner.
